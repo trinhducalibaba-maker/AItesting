@@ -239,10 +239,6 @@ function selectOption(questionId, optionIndex, type) {
             input.parentElement.classList.toggle('selected', i === optionIndex);
         });
 
-        // Auto-advance
-        setTimeout(() => {
-            nextQuestion();
-        }, 400);
 
     } else if (type === 'checkbox') {
         if (!answers[questionId]) answers[questionId] = [];
