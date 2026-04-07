@@ -358,7 +358,7 @@ function calculateScore() {
 function getTier(score) {
     if (score >= 12 && score <= 19) {
         return {
-            name: 'AI Curious',
+            name: 'Con Gà AI',
             class: 'tier-aware',
             description: `
                 <p class="result-highlight">Bạn đang ở đây — cùng với rất nhiều dân văn phòng.</p>
@@ -393,10 +393,10 @@ function getTier(score) {
         };
     } else if (score >= 20 && score <= 24) {
         return {
-            name: 'AI User',
+            name: 'Cùng là con gà AI nhưng thông minh hơn 1 chút',
             class: 'tier-user',
             description: `
-                <p class="result-highlight">Bạn dùng AI hàng ngày — nhưng vẫn đang dùng như Google.</p>
+                <p class="result-highlight">Bạn dùng AI hàng ngày — nhưng thực ra bạn vẫn chỉ là một con gà.</p>
                 <p>Bạn biết ChatGPT, có thể đã dùng Custom GPT hoặc Projects. Nhưng cách bạn dùng AI chủ yếu là: hỏi một câu, nhận một đáp án, xong.</p>
                 <p>Bạn chưa nghĩ về việc <strong>cách hỏi</strong> ảnh hưởng đến <strong>chất lượng câu trả lời</strong>.</p>
 
@@ -404,7 +404,7 @@ function getTier(score) {
                     <thead>
                         <tr>
                             <th>Bạn đang làm</th>
-                            <th>AI Practitioner làm</th>
+                            <th>Chủ của nông trại con gà AI làm</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -427,18 +427,18 @@ function getTier(score) {
         };
     } else if (score >= 25 && score <= 28) {
         return {
-            name: 'AI Practitioner',
+            name: 'Bạn chăn tụi AI như những con gà',
             class: 'tier-practitioner',
             description: `
                 <p class="result-highlight">Bạn dùng AI có chủ đích — và đang ở nhóm <strong>top 20%</strong> dân văn phòng.</p>
-                <p>Bạn hiểu rằng cách hỏi quyết định chất lượng output. Bạn đã dùng các tính năng nâng cao, có thể đã customize setup riêng.</p>
-                <p>Nhưng giữa "dùng tốt" và "không thể thiếu" vẫn còn một bước nhảy:</p>
+                <p>Nhưng bạn đừng nghĩ như vậy là hay, là giỏi, vì bạn có thể bị bỏ lại phía sau nếu không gặp Dr AI Trịnh Đức.</p>
+                <p>Đúng vậy,bạn không nghe nhầm đâu, bạn có thể trở về level Con Gà AI bất cứ lúc nào nếu không gặp được <strong> Trịnh Đức 0971558944 </strong>:</p>
 
                 <table class="result-table">
                     <thead>
                         <tr>
                             <th>Bạn đang làm</th>
-                            <th>AI Native làm</th>
+                            <th>DR AI Trịnh Đức làm</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -461,7 +461,7 @@ function getTier(score) {
         };
     } else {
         return {
-            name: 'AI Native',
+            name: 'Master AI chứ không thể giống DR AI Trịnh Đức',
             class: 'tier-native',
             description: `
                 <p class="result-highlight">Nếu bạn thực sự ở đây — chúc mừng. Bạn thuộc nhóm <strong>top 5%</strong>.</p>
@@ -493,7 +493,7 @@ function showResults() {
     
     document.getElementById('progressBar').style.width = '100%';
 
-    const isAdvanced = (tier.name === 'AI Practitioner' || tier.name === 'AI Native');
+    const isAdvanced = (tier.name === 'Bạn chăn tụi AI như những con gà' || tier.name === 'Master AI chứ không thể giống DR AI Trịnh Đức');
     const ctaDate = isAdvanced ? 'CN 8/2/2026 | 09:00-11:30 | Online' : 'T7 7/2/2026 | 09:00-11:30 | Online';
     document.getElementById('workshopDateCta').textContent = ctaDate;
 
@@ -523,15 +523,15 @@ function registerWorkshop() {
 }
 
 function getThankYouContent(tierName) {
-    const isAdvanced = (tierName === 'AI Practitioner' || tierName === 'AI Native');
-    const workshopDate = isAdvanced ? 'Chủ nhật 8/2/2026' : 'Thứ 7 ngày 7/2/2026';
-    const workshopLabel = isAdvanced ? 'Workshop B (AI Practitioner & Native)' : 'Workshop A (AI Curious & User)';
+    const isAdvanced = (tierName === 'Bạn chăn tụi AI như những con gà' || tierName === 'Master AI chứ không thể giống DR AI Trịnh Đức');
+    const workshopDate = isAdvanced ? 'Thứ Ba 14/04/2026' : 'Thứ Hai ngày 13/04/2026';
+    const workshopLabel = isAdvanced ? 'Workshop B (Người chăn dắt AI như những con gà)' : 'Workshop A (Những con gà AI)';
 
     return `
         <h3 style="color: var(--primary); margin-bottom: 15px;">Workshop dành cho bạn: ${workshopLabel}</h3>
         <p style="font-size: 18px; font-weight: 600; margin: 15px 0;">${workshopDate} | 09:00-11:30 | Online</p>
         <p style="margin-top: 15px;">Dựa trên kết quả scorecard, mình đã chọn buổi workshop phù hợp nhất với cấp độ của bạn.</p>
-        <p style="margin-top: 15px; color: var(--text-secondary);">Trong lúc chờ đợi, bạn hãy vào <strong>Tier Ranking Tool</strong> bên dưới để tự xếp hạng các tính năng AI theo ý mình. Tim sẽ chia sẻ góc nhìn của mình về bảng xếp hạng này <strong>Live trên Google Meet</strong>.</p>
+        <p style="margin-top: 15px; color: var(--text-secondary);">Trong lúc chờ đợi, bạn hãy vào <strong>Tier Ranking Tool</strong> bên dưới để tự xếp hạng các tính năng AI theo ý mình. Đức sẽ chia sẻ góc nhìn của mình về bảng xếp hạng này <strong>Live trên Google Meet</strong>.</p>
         
         <div style="margin-top: 24px;">
             <a href="https://muriel1008.github.io/tier-ranking-tool/" target="_blank" class="btn btn-primary" style="text-decoration: none;">Mở Tier Ranking Tool</a>
